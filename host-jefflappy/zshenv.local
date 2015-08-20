@@ -1,0 +1,7 @@
+export PATH=$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin:/Applications/GnuPlot.app/Contents/Resources/bin:/usr/local/bin:/usr/local/node/bin:~/bin:/usr/local/zookeeper-cli/bin:$PATH
+
+export JAVA_HOME=`/usr/libexec/java_home`
+
+export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128M -XX:+UseCompressedOops -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+
+export NODE_PATH=/usr/local/lib/node_modules
