@@ -18,8 +18,8 @@ If you simply want to update your files, you can run [rcdn](https://thoughtbot.g
 
 ```sh
 cd ~/.dotfiles
-rcdn
-RCRC="./rcrc" rcup
+rcdn -B host
+RCRC="./rcrc" rcup -B host
 ```
 
 ## Credits

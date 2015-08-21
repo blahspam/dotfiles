@@ -46,6 +46,13 @@ export LSCOLORS=GxFxCxDxBxegedabagacad
 
 eval `dircolors ~/.dircolors`
 
+# bash style words
+autoload -U select-word-style
+select-word-style bash
+
+# emacs keybindings
+bindkey -e
+
 # load custom zsh functions
 for function in ~/.zsh/functions/*; do
   source $function
