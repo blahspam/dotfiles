@@ -27,6 +27,8 @@
 	ignorecase = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	autocrlf = input
+[commit]
+    template = ~/.gitmessage
 [diff]
     renames = copies
 [branch]
