@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -rf $HOME/.vim/autoload/
+rm -rf $HOME/.vim/plugged/
