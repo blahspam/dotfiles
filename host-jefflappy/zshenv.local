@@ -1,3 +1,7 @@
 export PATH=$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:~/bin:$PATH
+
 export JAVA_HOME=`/usr/libexec/java_home`
 export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128M -XX:+UseCompressedOops -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+
+export GOPATH="~/Code/go"
+export GOROOT=$(/usr/local/bin/brew --prefix go)/libexec/bin
