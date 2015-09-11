@@ -6,8 +6,11 @@ export JAVA_HOME=`/usr/libexec/java_home`
 # maven (ugh)
 export MAVEN_OPTS="-Xmx512m -XX:+UseCompressedOops -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
 
+# hadoop
+export HADOOP_HOME=/usr/local/hadoop
+
 # go
-export GOPATH="~/Code/go"
+export GOPATH="Users/jeff/Code/go"
 export GOROOT=$(/usr/local/bin/brew --prefix go)/libexec/bin
 
 # tomcat
