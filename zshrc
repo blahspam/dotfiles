@@ -11,7 +11,7 @@ precmd() {
     vcs_info
 }
 setopt prompt_subst
-PROMPT="%F{green}%m%f:%F{white}%2c%f\${vcs_info_msg_0_} %F{yellow}$%f "
+PROMPT="%F{green}%M%f:%F{white}%2c%f\${vcs_info_msg_0_} %F{yellow}$%f "
 
 function +vi-git-aheadbehind() {
     local ahead behind
