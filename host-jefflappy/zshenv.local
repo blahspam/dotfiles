@@ -1,3 +1,5 @@
+setopt no_global_rcs
+
 export PATH=$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:~/bin:$PATH
 
 #java

@@ -93,11 +93,8 @@ map <C-?> <plug>NERDCommenterToggle
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <C-u> :Unite -toggle -auto-resize -buffer-name=mixed -start-insert file_rec/async:! buffer<cr>
-let g:unite_source_file_rec_ignore_pattern='\%(^\|/\)\.$\|\~$\|\.\%(o\|exe\|dll\|ba\?k\|sw[po]\|tmp\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\|jruby\|idea\|vagrant\)\%($\|/\)\|node_modules'
+" ctrl-p
+
 
 " git-gutter
 let g:gitgutter_realtime = 1000
