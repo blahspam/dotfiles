@@ -24,5 +24,7 @@ alias dots='vim $DOTFILES'
 alias http="python -m SimpleHTTPServer"
 alias smtp="python -m smtpd -n -c DebuggingServer localhost:25"
 
-# vagrant
-alias v="vagrant"
+# docker
+alias dk="docker"
+alias dkrm="docker rm \$(docker ps -a -q)"
+alias dkrmi="docker rmi -f \$(docker images -q -a -f dangling=true)"
