@@ -13,5 +13,3 @@ export GOPATH=$HOME/Develop/go
 export GOROOT=$(brew --prefix go)/libexec/
 export PATH=$PATH:$GOPATH/bin
 
-# sublime alias (move this to a tag if jefflappy becomes non osx in the future)
-alias subl=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl

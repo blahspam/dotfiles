@@ -35,3 +35,6 @@ alias dkkill="docker kill \$(docker ps -q)"
 
 # docker: delete all images
 alias dkclean="docker rmi \$(docker images -q)"
+
+# update dotfiles 
+alias updots="rcup -B `hostname -s` && source ~/.zshrc"
