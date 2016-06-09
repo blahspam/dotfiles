@@ -13,7 +13,7 @@
     type = cat-file -t
     dump = cat-file -p
     uncommit = git reset --soft HEAD~1
-    this = config user.email "jeffb@thistech.com"
+    cmc = config user.email "jeff_bailey@cable.comcast.com"
 [color]
     diff = auto
     branch = auto

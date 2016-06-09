@@ -13,10 +13,6 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
 alias hosts='sudo vim /etc/hosts'
 alias dots='vim $DOTFILES'
 
@@ -26,6 +22,16 @@ alias smtp="python -m smtpd -n -c DebuggingServer localhost:25"
 
 # docker
 alias dk="docker"
-alias dkrm="docker rm \$(docker ps -a -q)"
-alias dkrmi="docker rmi -f \$(docker images -q -a -f dangling=true)"
 alias dkc="docker-compose"
+
+# docker: delete all stopped containers
+alias dkrm="docker rm \$(docker ps -a -q)"
+
+# docker: delete untagged images
+alias dkrmi="docker rmi -f \$(docker images -q -a -f dangling=true)"
+
+# docker: kill all running containers
+alias dkkill="docker kill \$(docker ps -q)"
+
+# docker: delete all images
+alias dkclean="docker rmi \$(docker images -q)"
