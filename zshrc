@@ -59,15 +59,13 @@ for function in ~/.zsh/functions/*; do
 done
 
 # history
-setopt hist_ignore_all_dups inc_append_history
-HISTFILE=~/.zhistory
-HISTSIZE=4096
-SAVEHIST=4096
+setopt INC_APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS
+HISTFILE=~/.zsh_history
+HISTSIZE=999999999
+SAVEHIST=999999999
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # local overrides
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-
