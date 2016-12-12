@@ -1,29 +1,29 @@
 [alias]
-    ci = commit
-    pr = pull --rebase --prune
-    co = checkout
-    cob = checkout -b 
-    aa = add --all
-    amend = commit -a --amend
-    st = status -sb
-    dh = diff HEAD
-    dd = diff -b -w --word-diff-regex=.
-    lg = log --graph --pretty=format:'%Cred%h%Creset : %C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    type = cat-file -t
-    dump = cat-file -p
-    uncommit = git reset --soft HEAD~1
-    cmc = config user.email "jeff_bailey@cable.comcast.com"
+  ci = commit
+  pr = pull --rebase --prune
+  co = checkout
+  cob = checkout -b
+  aa = add --all
+  amend = commit -a --amend
+  st = status -sb
+  dh = diff HEAD
+  dd = diff -b -w --word-diff-regex=.
+  lg = log --graph --pretty=format:'%Cred%h%Creset : %C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  type = cat-file -t
+  dump = cat-file -p
+  uncommit = git reset --soft HEAD~1
+  cmc = config user.email "jeff_bailey@cable.comcast.com"
 [color]
-    diff = auto
-    branch = auto
-    interactive = auto
-    status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  status = auto
 [user]
 	name = Jeff Bailey
 	email = jeff@blahspam.com
 [core]
-    excludesfile = /Users/jeff/.gitignore
+  excludesfile = /Users/jeff/.gitignore
 	ignorecase = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	autocrlf = input
