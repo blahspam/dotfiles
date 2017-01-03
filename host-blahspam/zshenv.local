@@ -1,0 +1,15 @@
+setopt no_global_rcs
+export PATH=/usr/local/bin:/~bin:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
+#java
+export JAVA_HOME=`/usr/libexec/java_home`
+
+# maven (ugh)
+export MAVEN_OPTS="-Xmx512m -XX:+UseCompressedOops -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+
+# go
+export GOPATH=$HOME/Develop/go
+export GOROOT=$(brew --prefix go)/libexec/
+export PATH=$PATH:$GOPATH/bin
+
