@@ -22,9 +22,9 @@ bindkey -e
 
 # history
 setopt INC_APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS
-export HISTFILE=~/.zsh_history
-export HISTSIZE=999999999
-export SAVEHIST=999999999
+HISTFILE=~/.zsh_history
+HISTSIZE=999999999
+SAVEHIST=999999999
 
 # local overrides
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

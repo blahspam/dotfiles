@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'thoughtbot/formulae'
+tap 'buo/cask-upgrade'
 
 brew 'coreutils'
 brew 'gdbm'

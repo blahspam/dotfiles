@@ -1,4 +1,7 @@
 #!/bin/sh
 
-rm -rf $HOME/.vim/autoload/
-rm -rf $HOME/.vim/plugged/
+rm -rf ~/.vim/autoload/
+rm -rf ~/.vim/plugged/
+rm ~/.ssh/config
+rm ~/jbailey.keytab
+sudo rm /etc/krb5.conf

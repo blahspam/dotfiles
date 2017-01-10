@@ -5,12 +5,6 @@
 # This script is designed to bootstrap a fresh OSX installation.              #
 # usage: ./osx-setup.sh host                                                  #
 ###############################################################################
-if [ -z "$1" ]
-  then
-    echo "Hostname not specified"
-    exit
-fi
-
 cd ~/.dotfiles
 
 # Install Homebrew
@@ -28,8 +22,7 @@ echo $ZSH_BIN | sudo tee -a /etc/shells
 chsh -s $ZSH_BIN
 
 # "install" dotfiles via rcup
-echo $1
-RCRC="./rcrc" rcup -B $1
+RCRC="./rcrc" rcup
 
 # Preferences
 # Global:

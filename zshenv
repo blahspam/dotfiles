@@ -1,11 +1,12 @@
 setopt no_global_rcs
+export DOTFILES=~/.dotfiles
 
 export VISUAL=vim
 export EDITOR=$VISUAL
 
 # gnu coreutils first
-export PATH=/usr/local/bin:/~bin:$PATH
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+export PATH="/usr/local/bin:/~bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -17,12 +18,12 @@ export MAVEN_OPTS="-Xmx512m -XX:+UseCompressedOops -Dmaven.wagon.http.ssl.insecu
 export HADOOP_HOME="$(brew --prefix hadoop)"
 export HADOOP_CONF_DIR="/usr/local/etc/hadoop/conf"
 #export HADOOP_OPTS="-Dsun.security.krb5.debug=true $HADOOP_OPTS"
-export PATH=$PATH:$HADOOP/bin
+export PATH="$PATH:$HADOOP/bin"
 
 # go
-export GOPATH=$HOME/Develop/go
+export GOPATH="~/Develop/go"
 export GOROOT=$(brew --prefix go)/libexec/
-export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:$GOPATH/bin"
 
 # overrides
-[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
+[[ -f $HOME/.zshenv.local ]] && source $HOME/.zshenv.local
