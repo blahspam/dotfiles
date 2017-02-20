@@ -5,6 +5,6 @@ if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
 fi
 vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
 
-ln -s ~/Dropbox/System/ssh-config ~/.ssh/config
-ln -s ~/Dropbox/System/jbailey.keytab ~/jbailey.keytab
-sudo ln -s ~/Dropbox/System/krb5.conf /etc/krb5.conf
+ln -sf ~/Dropbox/System/ssh-config ~/.ssh/config
+ln -sf ~/Dropbox/System/jbailey.keytab ~/jbailey.keytab
+#sudo ln -sf ~/Dropbox/System/krb5.conf /etc/krb5.conf
