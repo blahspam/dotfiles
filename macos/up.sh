@@ -1,28 +1,30 @@
 #!/usr/bin/env bash
-###############################################################################
-# osx-setup.sh                                                                #
-#                                                                             #
-# This script is designed to bootstrap a fresh OSX installation.              #
-# usage: ./osx-setup.sh host                                                  #
-###############################################################################
-cd ~/.dotfiles
 
-# Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+cd "$(dirname "$0")";
+
+# Install Homebrew if necessary
+if [ hash brew 2>/dev/null ]; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 brew doctor
 brew update
-
-# Install & run homebrew-bundle
 brew tap Homebrew/bundle
 brew bundle
+brew upgrade
+brew cleanup
 
-# change shell to zsh
-ZSH_BIN="`brew --prefix`/bin/zsh"
-echo $ZSH_BIN | sudo tee -a /etc/shells
-chsh -s $ZSH_BIN
+# change shell to zsh if this is our first time
+declare -r zsh_bin="`brew --prefix`/bin/zsh"
+if [ -z "${zsh_bin}" ]; then
+  if [ -z "$(cat /etc/shells | grep $zsh_bin)" ]; then
+    echo $zsh_bin | sudo tee -a /etc/shells
+    chsh -s $zsh_bin
+  fi
+fi
 
-# "install" dotfiles via rcup
-RCRC="./rcrc" rcup
+# link private ssh config from Dropbox
+ln -sf ~/Dropbox/System/ssh-config ~/.ssh/config
 
 # Preferences
 # Global:

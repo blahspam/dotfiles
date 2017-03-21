@@ -20,7 +20,7 @@ Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git' " Syntax
+Plug 'tpope/vim-git'
 Plug 'morhetz/gruvbox'
 Plug 'fatih/vim-go'
 

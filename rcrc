@@ -1,2 +1,0 @@
-EXCLUDES="README.md LICENSE extras:*"
-SYMLINK_DIRS="vim zsh"

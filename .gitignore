@@ -1,2 +1,12 @@
-vim/autoload/
-vim/plugged/
+# Folder view configuration files
+.DS_Store
+
+# IntelliJ project files
+.idea
+*.iml
+
+# Compiled Python files
+*.pyc
+
+# personal clipboards
+cb*.*

@@ -28,12 +28,14 @@
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	autocrlf = input
 [commit]
-    template = ~/.gitmessage
+  template = ~/.gitmessage
 [diff]
-    renames = copies
+  renames = copies
 [branch]
-    autosetupmerge = true
+  autosetupmerge = true
 [push]
-    default = tracking
+  default = tracking
 [merge]
-    stat = true
+  stat = true
+[url "git@github.comcast.com:"]
+	insteadOf = https://github.comcast.com/

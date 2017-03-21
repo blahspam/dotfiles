@@ -5,8 +5,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # gnu coreutils first
-export PATH="/usr/local/bin:/~bin:$PATH"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:/usr/local/bin:/~bin:$PATH"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -21,8 +20,9 @@ export HADOOP_CONF_DIR="/usr/local/etc/hadoop/conf"
 export PATH="$PATH:$HADOOP/bin"
 
 # go
-export GOPATH="~/Develop/go"
+export GOPATH="$HOME/Develop/go"
 export GOROOT=$(brew --prefix go)/libexec/
+export PKG_CONFIG_PATH=$(brew --prefix lua@5.1)/lib/pkgconfig/
 export PATH="$PATH:$GOPATH/bin"
 
 # overrides

@@ -13,12 +13,20 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
+# quick edits
 alias hosts='sudo vim /etc/hosts'
 alias dots='atom $DOTFILES'
 
 # quick servers
 alias http="python -m SimpleHTTPServer"
 alias smtp="python -m smtpd -n -c DebuggingServer localhost:25"
+
+# show or hide hidden files in Finder
+alias showh="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hideh="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# print path in a readable fashion
+alias path='echo -e ${PATH//:/\\n}'
 
 # docker
 alias dk="docker"
@@ -30,14 +38,5 @@ alias dkrm="docker rm \$(docker ps -a -q)"
 # docker: delete untagged images
 alias dkrmi="docker rmi -f \$(docker images -q -a -f dangling=true)"
 
-# docker: kill all running containers
-alias dkkill="docker kill \$(docker ps -q)"
-
 # docker: delete all images
 alias dkclean="docker rmi \$(docker images -q)"
-
-# update dotfiles
-alias updots="rcup -B `hostname -s` && source ~/.zshrc"
-
-# update installed casks
-alias upcasks="brew cask list | xargs brew cask install --force"
