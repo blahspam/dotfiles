@@ -15,12 +15,12 @@ esac
 # rsync files into place
 rsync \
   --exclude ".git/" \
+  --exclude "macos/" \
 	--exclude ".DS_Store" \
-	--exclude "macos.sh" \
-	--exclude "up.sh" \
-  --exclude "Brewfile" \
-	--exclude "README.md" \
-	--exclude "LICENSE" \
+  --exclude "LICENSE" \
+  --exclude "README.md" \
+  --exclude "reload.sh" \
+	--exclude "update.sh" \
 	-avh --no-perms . ~
 
 # fetch/run vim-plug
@@ -29,9 +29,7 @@ if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
 fi
 vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
 
-# source changes
-source ~/.zshrc
-source ~/.zshenv
+./reload.sh
 
 # return from whence we came
 cd -
