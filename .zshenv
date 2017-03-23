@@ -5,7 +5,8 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # gnu coreutils first
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:/usr/local/bin:/~bin:$PATH"
+export PATH="/~bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home`
