@@ -6,6 +6,7 @@ tap 'thoughtbot/formulae'
 tap 'buo/cask-upgrade'
 
 brew 'coreutils'
+brew 'fswatch'
 brew 'gdbm'
 brew 'git'
 brew 'go'
