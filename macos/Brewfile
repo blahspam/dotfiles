@@ -58,6 +58,7 @@ cask 'robomongo'
 cask 'slack'
 cask 'steam'
 cask 'transmission'
+cask 'tunnelblick'
 cask 'visualvm'
 
 cask 'font-inconsolata'
