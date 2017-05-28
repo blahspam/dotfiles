@@ -3,7 +3,7 @@
 cd "$(dirname "$0")";
 
 # Install Homebrew if necessary
-if [ hash brew 2>/dev/null ]; then
+if [ ! hash brew 2>/dev/null ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -14,9 +14,9 @@ brew bundle
 brew upgrade
 brew cleanup
 
-# change shell to zsh if this is our first time
+# change shell to brewed zsh if we havent already
 declare -r zsh_bin="`brew --prefix`/bin/zsh"
-if [ -z "${zsh_bin}" ]; then
+if [ -n "${zsh_bin}" ]; then
   if [ -z "$(cat /etc/shells | grep $zsh_bin)" ]; then
     echo $zsh_bin | sudo tee -a /etc/shells
     chsh -s $zsh_bin

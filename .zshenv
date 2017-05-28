@@ -21,7 +21,7 @@ export HADOOP_CONF_DIR="/usr/local/etc/hadoop/conf"
 export PATH="$PATH:$HADOOP/bin"
 
 # go
-export GOPATH="$HOME/Develop/go"
+export GOPATH="$HOME/Dropbox/Develop/go"
 export GOROOT=$(brew --prefix go)/libexec/
 export PKG_CONFIG_PATH=$(brew --prefix lua@5.1)/lib/pkgconfig/
 export PATH="$PATH:$GOPATH/bin"
