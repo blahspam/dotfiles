@@ -39,4 +39,4 @@ alias dkrm="docker rm \$(docker ps -a -q)"
 alias dkrmi="docker rmi -f \$(docker images -q -a -f dangling=true)"
 
 # docker: delete all images
-alias dkclean="docker rmi \$(docker images -q)"
+alias dkclean="docker rmi -f \$(docker images -q)"
