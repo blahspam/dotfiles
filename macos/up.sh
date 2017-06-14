@@ -3,11 +3,13 @@
 cd "$(dirname "$0")";
 
 # Install Homebrew if necessary
-if [ ! hash brew 2>/dev/null ]; then
+if ! type brew > /dev/null; then
+  echo "Installing Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 brew doctor
+brew prune
 brew update
 brew tap Homebrew/bundle
 brew bundle
@@ -73,7 +75,7 @@ chflags nohidden ~/Library
 
 # kill / restart apps
 echo "Changed defaults. Restarting apps…"
-for app in Safari Finder Dock Mail; do killall "$app"; done
+for app in Dock Finder Mail Safari; do killall "$app" &>/dev/null; done
 echo "Restarted apps. All done."
 
-cd -
+cd ~-

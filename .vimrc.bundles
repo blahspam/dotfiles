@@ -1,26 +1,28 @@
 set nocompatible
 call plug#begin('~/.vim/plugged')
 
+" core
 Plug 'L9/plugin/l9.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'tpope/vim-vinegar.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-commentary.vim'
+Plug 'tpope/vim-repeat.vim'
 Plug 'tpope/vim-surround.vim'
-Plug 'bling/vim-airline.vim'
-Plug 'scrooloose/nerdcommenter.vim'
-Plug 'corntrace/bufexplorer.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'kien/ctrlp.vim'
-Plug 'fweep/vim-tabber.vim'
-Plug 'mattn/webapi-vim.vim'
-Plug 'mattn/gist-vim.vim'
-Plug 'sukima/xmledit.vim'
-Plug 'derekwyatt/vim-scala.vim'
-Plug 'rodjek/vim-puppet.vim'
-Plug 'scrooloose/syntastic.vim'
+
+" git
 Plug 'airblade/vim-gitgutter.vim'
-Plug 'gregsexton/gitv.vim'
-Plug 'tpope/vim-fugitive.vim'
 Plug 'tpope/vim-git.vim'
-Plug 'morhetz/gruvbox.vim'
-Plug 'fatih/vim-go.vim'
+Plug 'tpope/vim-fugitive.vim'
+Plug 'tpope/vim-vinegar.vim'
+Plug 'gregsexton/gitv.vim'
+
+" syntax
+Plug 'scrooloose/syntastic.vim'
+Plug 'derekwyatt/vim-scala.vim', { 'for': 'scala' }
+Plug 'fatih/vim-go.vim', { 'for': 'go' }
+Plug 'sukima/xmledit.vim', { 'for': 'xml' }
+Plug 'GEverding/vim-hocon', { 'for': 'hocon' }
 
 call plug#end()

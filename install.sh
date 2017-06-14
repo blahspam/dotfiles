@@ -3,8 +3,9 @@
 # run from this directory
 cd "$(dirname "$0")"
 
-# ensure we have latest dotfiles
+# ensure we have latest
 git pull origin master
+git submodule update --recursive --remote
 
 # run any os specific scripts
 case "$(uname)" in
@@ -12,8 +13,9 @@ case "$(uname)" in
   *) ;;
 esac
 
+echo "meh"
 # rsync files into place
-rsync \
+rsync -aqh \
   --exclude ".git/" \
   --exclude "macos/" \
 	--exclude ".DS_Store" \
@@ -21,7 +23,9 @@ rsync \
   --exclude "README.md" \
   --exclude "reload.sh" \
 	--exclude "install.sh" \
-	-avh --no-perms . ~
+	--no-perms . ~
+
+echo "feh"
 
 # fetch/run vim-plug
 if [ ! -e $HOME/.vim/autoload/plug.vim ]; then

@@ -1,16 +1,13 @@
 # completion
 autoload -U compinit && compinit
 
-# prompt
-[[ -f ~/.zsh/prompt ]] && source ~/.zsh/prompt
-
-# functions
-[[ -f ~/.zsh/functions ]] && source ~/.zsh/functions
-
-# aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
+source ~/.zsh/prompt
+source ~/.zsh/functions
+source ~/.aliases
 
 # colors
+source ~/.base16-shell/base16-shell.plugin.zsh
+base16_solarflare
 autoload -U colors && colors
 eval `dircolors ~/.dircolors`
 

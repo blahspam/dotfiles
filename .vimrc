@@ -14,36 +14,34 @@ set nolist
 :noremap <Leader>i :set list!<CR> " Toggle invisible chars
 
 " Style
-colorscheme gruvbox
-set background=dark
-set number
-if exists('+colorcolumn')
-    set colorcolumn=80
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
-" Tabs 
+" Tabs
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
 set smarttab
 
-" Indents 
+" Indents
 set autoindent
 set smartindent
 set cindent
 set copyindent
-set hidden    
+set hidden
 set cursorline
 set nowrap
-set ruler     
-set showcmd   
+set ruler
+set showcmd
 set showmatch
 
 set foldlevelstart=20
-set history=1000     
+set history=1000
 set undolevels=1000
-set wildmode=list:longest 
+set wildmode=list:longest
 set wildignore=*.swp,*.bak,*.pyc,*.class,target
 
 set nobackup
@@ -52,7 +50,7 @@ set noswapfile
 " Sudo file if you must
 cmap w!! %!sudo tee > /dev/null %
 
-" Navigation 
+" Navigation
 map <Leader>p <C-^>
 
 " Easy window navigation
@@ -78,13 +76,13 @@ imap <down> <nop>
 nmap j gj
 nmap k gk
 
-" Filetype 
+" Filetype
 au FileType make set noexpandtab
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 au BufNewFile,BufRead *.json set ft=javascript
 
-" NERDCommenter 
+" NERDCommenter
 " let NERDCreateDefaultMappings=0
 let NERDSpaceDelims=1
 map <C-?> <plug>NERDCommenterToggle
