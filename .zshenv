@@ -1,12 +1,11 @@
-setopt no_global_rcs
 export DOTFILES=~/.dotfiles
 
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-export PATH="/~bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/~bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
-# platform specific
+# platform specific environmentals
 case "$(uname)" in
   Darwin) source ~/.zshenv.macos;;
   *) ;;

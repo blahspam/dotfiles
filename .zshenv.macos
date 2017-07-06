@@ -1,9 +1,6 @@
 # coreutils first
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-#  zsh completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 # java and related
 export JAVA_HOME=`/usr/libexec/java_home`
 export MAVEN_OPTS="-Xmx512m"

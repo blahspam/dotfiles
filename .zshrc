@@ -1,11 +1,12 @@
-# completion
+setopt no_global_rcs
+
+# completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit && compinit
-
-source ~/.zsh/prompt
-source ~/.zsh/functions
-
-# kubectl auto completion
 source <(kubectl completion zsh)
+
+# prompt
+source ~/.zsh/prompt
 
 # colors
 source ~/.base16-shell/base16-shell.plugin.zsh
@@ -25,11 +26,15 @@ HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=999999999
 
-# move around
+# added functions
+source ~/.zsh/functions
+
+# nav
 alias ..="cd .."
 alias ...="cd ../.."
 alias cdd="cd -"
 
+# better defaults
 alias ls="ls -F --color=auto --quoting=literal"
 alias l="ls -lAh"
 alias ll="ls -l"
