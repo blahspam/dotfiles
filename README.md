@@ -1,10 +1,10 @@
-# dotfiles redux
+# dotfiles re-re-redux
 
 A more simplified dotfiles implementation. Because I got sick of overthinking things.
 
-To install, simply clone and `up`
+To install, simply clone and `install`
 
 ```sh
 $ git clone https://github.com/blahspam/dotfiles ~/.dotfiles
-$ ./dotfiles/up.sh
+$ ./dotfiles/install.sh
 ```

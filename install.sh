@@ -7,21 +7,20 @@ cd "$(dirname "$0")"
 git pull origin master
 git submodule update --recursive --remote
 
-# run any os specific scripts
+# run any platform specific scripts
 case "$(uname)" in
-  Darwin) ./macos/up.sh;;
+  Darwin) ./macos.sh;;
   *) ;;
 esac
 
 # rsync files into place
 rsync -aqh \
   --exclude ".git/" \
-  --exclude "macos/" \
 	--exclude ".DS_Store" \
+  --exclude "Brewfile" \
   --exclude "LICENSE" \
   --exclude "README.md" \
-  --exclude "reload.sh" \
-	--exclude "install.sh" \
+  --exclude "*.sh" \
 	--no-perms . ~
 
 # fetch/run vim-plug
