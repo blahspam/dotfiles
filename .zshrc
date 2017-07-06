@@ -5,6 +5,9 @@ source ~/.zsh/prompt
 source ~/.zsh/functions
 source ~/.aliases
 
+# kubectl auto completion
+source <(kubectl completion zsh)
+
 # colors
 source ~/.base16-shell/base16-shell.plugin.zsh
 base16_solarflare

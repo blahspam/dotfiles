@@ -40,3 +40,6 @@ alias dkrmi="docker rmi -f \$(docker images -q -a -f dangling=true)"
 
 # docker: delete all images
 alias dkclean="docker rmi -f \$(docker images -q)"
+
+# kubernetes
+alias kube="kubectl"
