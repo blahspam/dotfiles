@@ -6,10 +6,10 @@ export JAVA_HOME=`/usr/libexec/java_home`
 export MAVEN_OPTS="-Xmx512m"
 
 # hadoop
-export HADOOP_HOME="$(brew --prefix hadoop)"
-export HADOOP_CONF_DIR="/usr/local/etc/hadoop/conf"
+#export HADOOP_HOME="$(brew --prefix hadoop)"
+#export HADOOP_CONF_DIR="/usr/local/etc/hadoop/conf"
 #export HADOOP_OPTS="-Dsun.security.krb5.debug=true $HADOOP_OPTS"
-export PATH="$PATH:$HADOOP/bin"
+#export PATH="$PATH:$HADOOP/bin"
 
 # go
 export GOPATH="$HOME/Dropbox/Develop/go"
