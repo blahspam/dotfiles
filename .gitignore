@@ -10,3 +10,7 @@
 
 # personal clipboards
 cb*.*
+
+# local overrides
+.zshenv.local
+.zshrc.local

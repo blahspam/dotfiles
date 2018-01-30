@@ -1,9 +1,12 @@
+setopt no_global_rcs
+
 export DOTFILES=~/.dotfiles
 
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-export PATH="/~bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+unset PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
 # platform specific environmentals
 case "$(uname)" in

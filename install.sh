@@ -29,7 +29,5 @@ if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
 fi
 vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
 
-./reload.sh
-
 # return from whence we came
 cd ~-
