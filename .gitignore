@@ -8,9 +8,9 @@
 # Compiled Python files
 *.pyc
 
-# personal clipboards
-cb*.*
-
 # local overrides
 .zshenv.local
 .zshrc.local
+
+# local helm files
+**/helm/environments/local-*.yaml

@@ -37,5 +37,5 @@
   default = tracking
 [merge]
   stat = true
-[url "git@github.comcast.com:"]
+[url "git@github.comcast.com"]
 	insteadOf = https://github.comcast.com/

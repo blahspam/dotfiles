@@ -2,3 +2,10 @@
 function mcd() {
   mkdir -p "$1" && cd "$1";
 }
+
+function tns() {
+  local ctx=$(kubectl config current-context)
+  local cns=$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${ctx}\")].context.namespace}")
+  echo "TILLER_NAMESPACE=${cns}"
+  export TILLER_NAMESPACE=${cns}
+}
