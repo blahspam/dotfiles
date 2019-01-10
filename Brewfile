@@ -5,8 +5,6 @@ tap 'caskroom/cask'
 tap 'caskroom/drivers'
 tap 'caskroom/fonts'
 
-update
-
 cask 'java'
 
 brew 'awscli'
@@ -72,6 +70,3 @@ mas 'Pages', id: 409201541
 mas 'Transmit', id: 403388562
 mas 'Tweetbot', id: 557168941
 mas 'Xcode', id: 497799835
-
-doctor
-clean
