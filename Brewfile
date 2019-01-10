@@ -1,8 +1,11 @@
+
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 tap 'caskroom/drivers'
 tap 'caskroom/fonts'
+
+update
 
 cask 'java'
 
@@ -12,7 +15,6 @@ brew 'gdbm'
 brew 'git'
 brew 'go'
 # brew 'kubernetes-helm'
-# brew 'ivy'
 brew 'jq'
 brew 'lua@5.1'
 brew 'python3'
@@ -24,8 +26,8 @@ brew 'nats-streaming-server'
 brew 'npm'
 brew 'openssl'
 brew 'pandoc'
-brew 'postgres'
-brew 'prometheus'
+brew 'postgres@10'
+# brew 'prometheus'
 brew 'rbenv'
 brew 'redis'
 brew 'rpm'
@@ -53,7 +55,10 @@ cask 'jetbrains-toolbox'
 cask 'mactex'
 cask 'microsoft-office'
 cask 'omnigraffle'
+cask 'quickbooks'
+# cask 'quicken'
 cask 'slack'
+cask 'things'
 cask 'tunnelblick'
 cask 'visualvm'
 cask 'visual-studio-code'
@@ -67,3 +72,6 @@ mas 'Pages', id: 409201541
 mas 'Transmit', id: 403388562
 mas 'Tweetbot', id: 557168941
 mas 'Xcode', id: 497799835
+
+doctor
+clean
