@@ -20,7 +20,8 @@ rsync -aqh \
   --exclude "Brewfile" \
   --exclude "LICENSE" \
   --exclude "README.md" \
-  --exclude "*.sh" \
+  --exclude "install.sh" \
+  --exclude "macos.sh" \
 	--no-perms . ~
 
 # fetch/run vim-plug

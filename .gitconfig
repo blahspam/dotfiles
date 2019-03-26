@@ -37,5 +37,8 @@
   default = tracking
 [merge]
   stat = true
+[fetch]
+  prune = true
+  pruneTags = true
 [url "git@github.comcast.com"]
 	insteadOf = https://github.comcast.com/

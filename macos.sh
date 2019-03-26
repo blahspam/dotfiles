@@ -8,13 +8,11 @@ if ! type brew > /dev/null; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew doctor
-brew prune
 brew update
 brew tap Homebrew/bundle
 brew bundle
 brew upgrade
-brew cleanup
+brew cleanup --force
 
 # change shell to brewed zsh if we haven't done so already
 declare -r zsh_bin="`brew --prefix`/bin/zsh"
@@ -24,6 +22,29 @@ if [ -n "${zsh_bin}" ]; then
     chsh -s $zsh_bin
   fi
 fi
+
+
+# install kubectl
+kubectl_version=1.11.3 && \
+  mkdir -p /usr/local/opt/kubectl@$kubectl_version/ && \
+  cd /usr/local/opt/kubectl@$kubectl_version && \
+  curl -O https://storage.googleapis.com/kubernetes-release/release/v$kubectl_version/bin/darwin/amd64/kubectl && \
+  chmod +x kubectl && \
+  ln -sf /usr/local/opt/kubectl@$kubectl_version/kubectl /usr/local/bin/kubectl && \
+  cd -
+
+# install helm
+helm_version=2.11.0 && \
+  mkdir -p /usr/local/opt/helm@$helm_version/ && \
+  cd /usr/local/opt/helm@$helm_version && \
+  curl -O https://storage.googleapis.com/kubernetes-helm/helm-v$helm_version-darwin-amd64.tar.gz && \
+  tar -xzf helm-v$helm_version-darwin-amd64.tar.gz && \
+  chmod +x darwin-amd64/helm && \
+  ln -sf /usr/local/opt/helm@2.9.1/darwin-amd64/helm /usr/local/bin/helm && \
+  cd -
+
+
+
 
 # link private ssh config from Dropbox
 ln -sf ~/Dropbox/System/ssh-config ~/.ssh/config
@@ -70,6 +91,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write com.apple.Safari IncludeDebugMenu -bool true
 
 defaults write com.apple.screencapture disable-shadow -bool true
+
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 chflags nohidden ~/Library
 

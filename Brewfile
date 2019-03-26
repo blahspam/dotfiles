@@ -3,12 +3,14 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 tap 'caskroom/drivers'
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/services'
 
 cask 'java'
 
 brew 'awscli'
 brew 'coreutils'
+brew 'dep'
 brew 'gdbm'
 brew 'git'
 brew 'go'
@@ -21,10 +23,12 @@ brew 'mackup'
 brew 'mas'
 brew 'maven'
 brew 'mercurial'
+brew 'nats-streaming-server'
 brew 'npm'
 brew 'openssl'
 brew 'pandoc'
-brew 'postgresql@10'
+brew 'postgresql'
+brew 'prometheus'
 brew 'rbenv'
 brew 'redis'
 brew 'rpm'
@@ -37,17 +41,17 @@ brew 'zsh'
 brew 'zsh-completions'
 
 cask '1password'
+cask 'aerial'
 cask 'airserver'
 cask 'alfred'
 cask 'backblaze'
-cask 'bartender'
 cask 'basictex'
 cask 'carbon-copy-cloner'
 cask 'charles'
 cask 'cleanmymac'
 cask 'colloquy'
 cask 'docker'
-# cask 'dropbox'
+cask 'dropbox'
 cask 'garmin-express'
 cask 'google-chrome'
 cask 'istat-menus'
@@ -57,9 +61,10 @@ cask 'microsoft-office'
 cask 'omnigraffle'
 cask 'onedrive'
 cask 'postman'
-cask 'quickbooks'
+cask 'quickbooks-online'
 cask 'quicken'
 cask 'slack'
+cask 'steam'
 cask 'the-unarchiver'
 cask 'tunnelblick'
 cask 'visualvm'
@@ -72,8 +77,9 @@ cask 'font-source-code-pro'
 mas 'Things', id: 904280696
 mas 'Keynote', id: 409183694
 mas 'Numbers', id: 409203825
+mas 'Omnigraffle', id: 1142578753
 mas 'Pages', id: 409201541
-mas 'Pixelmator' id: 407963104
+mas 'Pixelmator', id: 407963104
 mas 'Transmit', id: 403388562
 mas 'Tweetbot', id: 557168941
 mas 'Xcode', id: 497799835

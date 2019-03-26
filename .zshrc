@@ -10,7 +10,7 @@ source ~/.zsh/prompt
 
 # colors
 source ~/.base16-shell/base16-shell.plugin.zsh
-base16_solar-flare
+base16_solarflare
 autoload -U colors && colors
 eval `dircolors ~/.dircolors`
 
