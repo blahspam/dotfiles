@@ -24,11 +24,14 @@ rsync -aqh \
   --exclude "macos.sh" \
 	--no-perms . ~
 
+# update antibody
+antibody bundle < ~/.zsh/plugins > ~/.zsh_plugins.sh  
+
 # fetch/run vim-plug
 if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
+vim -u $HOME/.vim/plugins +PlugInstall +PlugClean! +qa
 
 # return from whence we came
 cd ~-

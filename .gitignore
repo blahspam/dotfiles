@@ -1,16 +1,7 @@
-# Folder view configuration files
 .DS_Store
-
-# IntelliJ project files
 .idea
 *.iml
-
-# Compiled Python files
 *.pyc
-
-# local overrides
 .zshenv.local
 .zshrc.local
-
-# local helm files
 **/helm/environments/local-*.yaml

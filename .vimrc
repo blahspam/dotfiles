@@ -4,8 +4,8 @@ filetype plugin on
 
 let mapleader = ","
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.vim/bundle"))
+  source ~/.vim.bundle
 endif
 
 " Invisible characters

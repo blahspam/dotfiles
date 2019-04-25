@@ -12,9 +12,9 @@ brew update
 brew tap Homebrew/bundle
 brew bundle
 brew upgrade
-brew cleanup --force
+brew cleanup 
 
-# change shell to brewed zsh if we haven't done so already
+# set shell to zsh
 declare -r zsh_bin="`brew --prefix`/bin/zsh"
 if [ -n "${zsh_bin}" ]; then
   if [ -z "$(cat /etc/shells | grep $zsh_bin)" ]; then
@@ -23,28 +23,32 @@ if [ -n "${zsh_bin}" ]; then
   fi
 fi
 
-
-# install kubectl
-kubectl_version=1.11.3 && \
-  mkdir -p /usr/local/opt/kubectl@$kubectl_version/ && \
-  cd /usr/local/opt/kubectl@$kubectl_version && \
-  curl -O https://storage.googleapis.com/kubernetes-release/release/v$kubectl_version/bin/darwin/amd64/kubectl && \
-  chmod +x kubectl && \
-  ln -sf /usr/local/opt/kubectl@$kubectl_version/kubectl /usr/local/bin/kubectl && \
-  cd -
+# install kubectls
+for kube_ver in '1.8.3', '1.11.3'
+do
+  local kube_dir="/usr/local/opt/kubectl@$kube_ver"
+  if [ ! -d $kube_dir ] then
+    mkdir -p /usr/local/opt/kubectl@$kube_ver/ && \
+    cd /usr/local/opt/kubectl@$kube_ver && \
+    curl -O https://storage.googleapis.com/kubernetes-release/release/v$kube_ver/bin/darwin/amd64/kubectl && \
+    chmod +x kubectl && \
+    ln -sf /usr/local/opt/kubectl@$kube_ver/kubectl /usr/local/bin/kubectl-$kube_ver && \
+    cd -
+  fi
+done
 
 # install helm
-helm_version=2.11.0 && \
-  mkdir -p /usr/local/opt/helm@$helm_version/ && \
-  cd /usr/local/opt/helm@$helm_version && \
-  curl -O https://storage.googleapis.com/kubernetes-helm/helm-v$helm_version-darwin-amd64.tar.gz && \
-  tar -xzf helm-v$helm_version-darwin-amd64.tar.gz && \
+local helm_ver='2.11.0'
+local helm_dir="/usr/local/opt/helm@$helm_ver/darwin-amd64/"
+if [ ! -d $helm_dir ]; then
+  mkdir -p /usr/local/opt/helm@$helm_ver/ && \
+  cd /usr/local/opt/helm@$helm_ver && \
+  curl -O https://storage.googleapis.com/kubernetes-helm/helm-v$helm_ver-darwin-amd64.tar.gz && \
+  tar -xzf helm-v$helm_ver-darwin-amd64.tar.gz && \
   chmod +x darwin-amd64/helm && \
-  ln -sf /usr/local/opt/helm@2.9.1/darwin-amd64/helm /usr/local/bin/helm && \
+  ln -sf /usr/local/opt/helm@$helm_ver/darwin-amd64/helm /usr/local/bin/helm && \
   cd -
-
-
-
+fi
 
 # link private ssh config from Dropbox
 ln -sf ~/Dropbox/System/ssh-config ~/.ssh/config
@@ -97,7 +101,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 chflags nohidden ~/Library
 
 # kill / restart apps
-echo "Changed defaults. Killing apps…"
-for app in Dock Finder Mail Safari; do killall "$app" &>/dev/null; done
+#echo "Changed defaults. Killing apps…"
+#for app in Dock Finder Mail Safari; do killall "$app" &>/dev/null; done
 
 cd ~-

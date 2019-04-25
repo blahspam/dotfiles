@@ -1,44 +1,40 @@
 [alias]
-  ci = commit
-  pr = pull --rebase --prune
-  co = checkout
-  cob = checkout -b
   aa = add --all
   amend = commit -a --amend
-  st = status -sb
-  dh = diff HEAD
-  dd = diff -b -w --word-diff-regex=.
-  lg = log --graph --pretty=format:'%Cred%h%Creset : %C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  type = cat-file -t
-  dump = cat-file -p
-  uncommit = git reset --soft HEAD~1
+  c = commit
+  co = checkout
+  cob = checkout -b
   cmc = config user.email "jeff_bailey@comcast.com"
+  pr = pull --rebase --prune
+  pull = pull --tags
+  scrub = gc --aggressive --prune=now
+  st = status -sb
+
 [color]
   diff = auto
   branch = auto
   interactive = auto
   status = auto
-[user]
-	name = Jeff Bailey
-	email = jeff@blahspam.com
+
 [core]
   excludesfile = /Users/jeff/.gitignore
 	ignorecase = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	autocrlf = input
+
 [commit]
   template = ~/.gitmessage
-[diff]
-  renames = copies
-[branch]
-  autosetupmerge = true
+
 [push]
-  default = tracking
-[merge]
-  stat = true
+  default = nothing
+
 [fetch]
   prune = true
   pruneTags = true
+
 [url "git@github.comcast.com"]
 	insteadOf = https://github.comcast.com/
+
+[user]
+	name = Jeff Bailey
+	email = jeff@blahspam.com
