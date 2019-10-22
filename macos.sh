@@ -26,27 +26,27 @@ fi
 # install kubectls
 for kube_ver in '1.8.3', '1.11.3'
 do
-  local kube_dir="/usr/local/opt/kubectl@$kube_ver"
-  if [ ! -d $kube_dir ] then
-    mkdir -p /usr/local/opt/kubectl@$kube_ver/ && \
-    cd /usr/local/opt/kubectl@$kube_ver && \
+  kube_dir="/usr/local/opt/kubectl@$kube_ver"
+  if [ ! -d $kube_dir ]; then
+    mkdir -p $kube_dir && \
+    cd $kube_dir && \
     curl -O https://storage.googleapis.com/kubernetes-release/release/v$kube_ver/bin/darwin/amd64/kubectl && \
     chmod +x kubectl && \
-    ln -sf /usr/local/opt/kubectl@$kube_ver/kubectl /usr/local/bin/kubectl-$kube_ver && \
+    ln -sf $kube_dir/kubectl /usr/local/bin/kubectl-$kube_ver && \
     cd -
   fi
 done
 
 # install helm
-local helm_ver='2.11.0'
-local helm_dir="/usr/local/opt/helm@$helm_ver/darwin-amd64/"
+helm_ver='2.11.0'
+helm_dir="/usr/local/opt/helm@$helm_ver/darwin-amd64/"
 if [ ! -d $helm_dir ]; then
-  mkdir -p /usr/local/opt/helm@$helm_ver/ && \
-  cd /usr/local/opt/helm@$helm_ver && \
+  mkdir -p $helm_dir/ && \
+  cd $helm_dir && \
   curl -O https://storage.googleapis.com/kubernetes-helm/helm-v$helm_ver-darwin-amd64.tar.gz && \
   tar -xzf helm-v$helm_ver-darwin-amd64.tar.gz && \
   chmod +x darwin-amd64/helm && \
-  ln -sf /usr/local/opt/helm@$helm_ver/darwin-amd64/helm /usr/local/bin/helm && \
+  ln -sf $helm_dir/darwin-amd64/helm /usr/local/bin/helm && \
   cd -
 fi
 

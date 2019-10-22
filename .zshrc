@@ -97,5 +97,8 @@ alias -g CTX='$(kb config get-contexts -o=name | sed "s/\($(kb config view -o=js
 alias -g POD='$(kbp | fzf --height=8 --header-lines=1 --reverse | awk "{print \$1}")'
 alias -g SVC='$(kbs | fzf --height=8 --header-lines=1 --reverse | awk "{print \$1}")'
 
+# create node_modules link (because dropbox)
+alias mknm='rm -rf ./node_modules && ln -s $(mktemp -d -t node_modules.XXXX) ./node_modules'
+
 # local overrides
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

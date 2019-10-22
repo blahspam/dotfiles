@@ -5,6 +5,7 @@
   co = checkout
   cob = checkout -b
   cmc = config user.email "jeff_bailey@comcast.com"
+  lg = log --graph --pretty=format:'%C(red)%h%C(reset) %C(yellow)%d%C(reset) %s %C(green)(%an %cr)%C(reset)'
   pr = pull --rebase --prune
   pull = pull --tags
   scrub = gc --aggressive --prune=now
@@ -26,7 +27,7 @@
   template = ~/.gitmessage
 
 [push]
-  default = nothing
+  default = upstream
 
 [fetch]
   prune = true

@@ -45,4 +45,3 @@ function kbln() {
     echo `readlink -n /usr/local/bin/kubectl | awk '{split($0,a,"/"); split(a[5],b,"@"); print b[2]}'`
   fi
 }
-compdef kbvers kbln

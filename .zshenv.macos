@@ -1,6 +1,9 @@
 # coreutils first
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
+# basictex
+export PATH="$PATH:/Library/TeX/Distributions/Programs/texbin"
+
 # java and related
 export JAVA_HOME=`/usr/libexec/java_home`
 export MAVEN_OPTS="-Xmx512m"

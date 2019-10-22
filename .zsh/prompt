@@ -19,8 +19,8 @@ function +vi-git-untracked() {
 function +vi-git-status() {
   local st
   st=$(git rev-list --left-right --count HEAD...@{upstream} 2>/dev/null)
-  (( $st[0] )) && hook_com[misc]+="%F{red}↓${st[0]}%f"
-  (( $st[1] )) && hook_com[misc]+="%F{green}↑${st[1]}%f"
+  (( $st[0] )) && hook_com[misc]+=" %F{red}↓${st[0]}%f"
+  (( $st[1] )) && hook_com[misc]+=" %F{green}↑${st[1]}%f"
 }
 
 function +vi-git-remote() {
