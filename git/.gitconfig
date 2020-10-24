@@ -33,7 +33,7 @@
   prune = true
   pruneTags = true
 
-[url "git@github.comcast.com"]
+[url "git@github.comcast.com/"]
 	insteadOf = https://github.comcast.com/
 
 [user]
