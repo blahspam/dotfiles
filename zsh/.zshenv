@@ -32,5 +32,6 @@ path+=(/usr/sbin)
 path+=(/bin)
 path+=(/sbin)
 
-# local overrides
+# overrides
+[[ -f ${HOME}/.zshenv.private ]] && source ${HOME}/.zshenv.private
 [[ -f ${HOME}/.zshenv.local ]] && source ${HOME}/.zshenv.local
