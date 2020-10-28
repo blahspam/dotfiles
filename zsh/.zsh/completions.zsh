@@ -8,13 +8,8 @@ else
 	compinit -C ${HOME}/.zsh/.zcompdump
 fi;
 
-# completion style: (h/t @mnarrell)
-# - Case-insensitive.
-# - Accept abbreviations after . or _ or - (ie. f.b -> foo.bar).
-# - Substring complete (ie. bar -> foobar).
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-# additional completions.
+# antibody
+source <(command antibody init)
 
 # fzf
 [[ -d "/usr/local/opt/fzf/shell" ]] &&
@@ -37,3 +32,6 @@ if [[ $+commands[kubectl] ]]; then
     command kubectl "$@"
   }
 fi
+
+# zsh-users/zsh-autosuggestions
+bindkey '^ ' autosuggest-accept 

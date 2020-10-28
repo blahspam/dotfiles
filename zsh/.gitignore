@@ -2,3 +2,4 @@
 .zshrc.local
 .zcompdump
 .zsh_history
+plugins.zsh
