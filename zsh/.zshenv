@@ -3,6 +3,14 @@
 # ignore run commands in /etc
 setopt no_global_rcs
 
+# XDG (todo)
+# export XDG_CONFIG_HOME=${HOME}/.config
+# export XDG_CACHE_HOME=${HOME}/.cache
+# export XDG_DATA_HOME=${HOME}/.local/share
+# export XDG_RUNTIME_DIR=${HOME}/tmp/runtime
+
+# export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
+
 export DOTFILES=${HOME}/.dotfiles
 export EDITOR=vim
 
@@ -23,16 +31,6 @@ path+=(/usr/bin)
 path+=(/usr/sbin)
 path+=(/bin)
 path+=(/sbin)
-
-# go: env specific
-if [[ -d /usr/local/opt/go/libexec/ ]]; then
-  export GOROOT=/usr/local/opt/go/libexec/
-fi
-
-# fzf settings
-if [[ $+commands[fzf] ]]; then
-
-fi
 
 # local overrides
 [[ -f ${HOME}/.zshenv.local ]] && source ${HOME}/.zshenv.local

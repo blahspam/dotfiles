@@ -2,10 +2,10 @@ set encoding=utf-8
 
 filetype plugin on
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
-if filereadable(expand("~/.vim/bundle"))
-  source ~/.vim.bundle
+if filereadable(expand("~/.vim/plugins"))
+  source ~/.vim/plugins
 endif
 
 " Invisible characters

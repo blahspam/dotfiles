@@ -1,6 +1,6 @@
 #! /usr/bin/env zsh
 
-autoload -Uz vcs_info colors
+autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%F{green}+%f'

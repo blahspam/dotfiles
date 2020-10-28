@@ -1,12 +1,12 @@
 docker
 git
-go
-kubernetes-cli
-kubernetes-helm
+golang
+helm
+kubectl
 mercurial
-node
+nodejs
 npm
-psql
+postgresql
 sqlite
 vim
 stow

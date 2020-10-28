@@ -1,17 +1,17 @@
 #! /usr/bin/env zsh
 
-
-export HISTFILE=${HOME}/.zsh/.zsh_history
-export HISTFILESIZE=1000000000
+export HISTFILE="${HOME}/.zsh/zsh_history"
 export HISTSIZE=1000000000
-export HISTTIMEFORMAT="[%F %T] "
+export SAVEHIST=1000000000
 
-setopt INC_APPEND_HISTORY
-setopt EXTENDED_HISTORY
-# setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_FIND_NO_DUPS
-# setopt HIST_REDUCE_BLANKS
-setopt SHARE_HISTORY
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history_time
+unsetopt inc_append_history
+unsetopt share_history
 
 # zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
