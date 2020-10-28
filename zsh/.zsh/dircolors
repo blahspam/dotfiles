@@ -41,8 +41,8 @@ TERM xterm*
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 
-#NORMAL 00 # no color code at all
-#FILE 00 # regular file: use no color at all
+NORMAL 00 # no color code at all
+FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
 DIR 01;34 # directory
 LINK 01;36 # symbolic link.
@@ -72,7 +72,7 @@ EXEC 01;32
 *install.sh 00;33
 
 # special files (bold)
-*.md 01
+.md 01
 *README.txt 01
 
 # archives or compressed (bold red)
@@ -193,3 +193,6 @@ EXEC 01;32
 .opus 00;36
 .spx 00;36
 .xspf 00;36
+
+# ignorable (gray)
+.DS_Store 01;30

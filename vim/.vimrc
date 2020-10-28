@@ -2,10 +2,10 @@ set encoding=utf-8
 
 filetype plugin on
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.vim/plugins"))
+  source ~/.vim/plugins
 endif
 
 " Invisible characters
@@ -81,41 +81,5 @@ au FileType make set noexpandtab
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 au BufNewFile,BufRead *.json set ft=javascript
-
-" NERDCommenter
-" let NERDCreateDefaultMappings=0
-let NERDSpaceDelims=1
-map <C-?> <plug>NERDCommenterToggle
-
-" Status line
-set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-" ctrl-p
-
-
-" git-gutter
-let g:gitgutter_realtime = 1000
-let g:gitgutter_sign_column_always = 1
-
-" vim-gist
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_show_privates = 1
-let g:gist_post_private = 1
-
-" format JSON
-map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
-
-" Format XML
-function! DoPrettyXML()
-  let l:origft = &ft
-  set ft=
-  silent %!xmllint --format -
-  1
-  exe "set ft=" . l:origft
-endfunction
-command! PrettyXML call DoPrettyXML()
-
 
 highlight SpellBad cterm=underline,bold ctermbg=1 ctermfg=7
