@@ -18,10 +18,10 @@ prepare-xdg:
 
 
 # update/upgrade brew bundle
-brew: install-brew
+brew: prepare-brew
 	@brew update
 	@brew upgrade
-	@brew bundle --file="$(DOTFILES)/Brewfile"
+	@brew bundle --no-lock --file="$(DOTFILES)/Brewfile" 
 
 nvim: prepare-xdg
 	@mkdir -pv "${XDG_CACHE_HOME}/$@"
@@ -41,4 +41,6 @@ $(modules): prepare-xdg
 	@mkdir -pv "${XDG_CACHE_HOME}/$@"
 	stow $@
 
-.PHONY: prepare-brew prepare-xdg brew nvim zsh $(modules)
+all: brew nvim zsh $(modules)
+
+.PHONY: prepare-brew prepare-xdg brew nvim zsh $(modules) all

@@ -3,7 +3,6 @@ aa = add --all
 amend = commit -a --amend
 c = commit
 co = checkout
-cmc = config user.email "jeff_bailey@comcast.com"
 lg = log --graph --pretty=format:'%C(red)%h%C(reset) %C(yellow)%d%C(reset) %s %C(green)(%an %cr)%C(reset)'
 prp = pull --rebase --prune
 pull = pull --tags
@@ -22,8 +21,11 @@ ignorecase = false
 whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 autocrlf = input
 
-[commit]
-# template = ~/.gitmessage
+[github]
+user = blahspam
+
+[pull]
+rebase = true
 
 [push]
 default = upstream

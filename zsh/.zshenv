@@ -8,17 +8,27 @@ export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_CACHE_HOME=${HOME}/.cache
 export XDG_DATA_HOME=${HOME}/.local/share
 
-# npm xdg config
+# aws: xdg config
+export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}/aws/credentials"
+export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}/aws/config"
+
+# docker: xdg config
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+
+# homebrew: bundle --no-lock
+export HOMEBREW_BUNDLE_NO_LOCK=true
+
+# npm: xdg config
 export NPM_CONFIG_USERCONFIG=${XDG_CONFIG_HOME}/npm/config
 export NPM_CONFIG_DEVDIR=${XDG_CACHE_HOME}/npm
 
-# postgres xdg config
+# postgres: xdg config
 export PSQLRC="${XDG_CONFIG_HOME}/pg/psqlrc"
 export PGPASSFILE="${XDG_CONFIG_HOME}/pg/pgpass"
 export PGSERVICEFILE="${XDG_CONFIG_HOME}/pg/pg_service.conf"
 export PSQL_HISTORY="${XDG_DATA_HOME}/pg/history"
 
-# zsh xdg config
+# zsh: xdg config
 export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
 
 # path
