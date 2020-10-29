@@ -1,7 +1,0 @@
-.DS_Store
-.idea
-*.iml
-*.pyc
-.zshenv.local
-.zshrc.local
-**/helm/environments/local-*.yaml
