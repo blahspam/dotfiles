@@ -13,18 +13,26 @@ precmd() {
 }
 
 function +vi-git-untracked() {
-  [[ -n $(git ls-files --others --exclude-standard) ]] && hook_com[staged]+="%F{orange}?%f"
+  if [[ -n $(git ls-files --others --exclude-standard) ]]; then
+    hook_com[staged]+="%F{orange}?%f"
+  fi
 }
 
 function +vi-git-remote() {
   local remote=$(git rev-parse --verify ${hook_com[branch]}@{upstream} --abbrev-ref 2>/dev/null)
-  [[ -n ${remote} ]] && hook_com[branch]=${remote}
+  if [[ -n "${remote}" ]]; then
+    hook_com[branch]="${remote}"
+  fi
 }
 
 function +vi-git-status() {
   local st=$(git rev-list --left-right --count HEAD...@{upstream} 2>/dev/null)
-  ((${st[0]})) && hook_com[misc]+=" %F{red}↓${st[0]}%f"
-  ((${st[1]})) && hook_com[misc]+=" %F{green}↑${st[1]}%f"
+  if ((${st[0]})); then
+    hook_com[misc]+=" %F{red}↓${st[0]}%f"
+  fi
+  if ((${st[1]})); then
+    hook_com[misc]+=" %F{green}↑${st[1]}%f"
+  fi
 }
 
 setopt prompt_subst
