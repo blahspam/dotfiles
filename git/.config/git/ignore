@@ -1,0 +1,12 @@
+.DS_Store
+.history  
+.idea
+
+*.code-workspace
+*.iml
+*.pyc
+*.swp
+
+jbaile223.yaml
+jbaile223-*.yaml
+local-*.yaml

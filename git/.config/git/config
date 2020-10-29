@@ -1,0 +1,37 @@
+[alias]
+aa = add --all
+amend = commit -a --amend
+c = commit
+co = checkout
+cmc = config user.email "jeff_bailey@comcast.com"
+lg = log --graph --pretty=format:'%C(red)%h%C(reset) %C(yellow)%d%C(reset) %s %C(green)(%an %cr)%C(reset)'
+prp = pull --rebase --prune
+pull = pull --tags
+scrub = gc --aggressive --prune=now
+st = status -sb
+
+[color]
+diff = auto
+branch = auto
+interactive = auto
+status = auto
+
+[core]
+abbrev = 12
+ignorecase = false
+whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+autocrlf = input
+
+[commit]
+# template = ~/.gitmessage
+
+[push]
+default = upstream
+
+[fetch]
+prune = true
+pruneTags = true
+
+[user]
+name = Jeff Bailey
+email = jeff@blahspam.com
