@@ -38,7 +38,7 @@ for f in \
   /usr/local/opt/coreutils/libexec/gnubin \
   /usr/local/opt/gnu-tar/libexec/gnubin \
   /usr/local/opt/make/libexec/gnubin \
-  /usr/local/opt/go/bin \
+  /usr/local/opt/go/libexec/bin \
   /Library/TeX/Distributions/Programs/texbin; do
   [[ -d ${f} ]] && path+=(${f})
 done
