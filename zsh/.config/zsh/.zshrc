@@ -19,5 +19,5 @@ for file in ${config_files}; do
 done
 
 # load private/local overrides
-[[ -f ${ZDOTDIR}/private.zsh ]] && source ${ZDOTDIR}/private.zsh
-[[ -f ${ZDOTDIR}/local.zsh ]] && source ${ZDOTDIR}/local.zsh
+[[ -f ${ZDOTDIR}/config/private.zsh ]] && source ${ZDOTDIR}/config/private.zsh
+[[ -f ${ZDOTDIR}/config/local.zsh ]] && source ${ZDOTDIR}/config/local.zsh

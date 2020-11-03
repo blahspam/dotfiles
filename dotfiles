@@ -1,0 +1,23 @@
+DOTFILES ?= ${HOME}/.private-dotfiles
+XDG_CONFIG_HOME := ${HOME}/.config
+XDG_CACHE_HOME := ${HOME}/.cache
+XDG_DATA_HOME := ${HOME}/.local/share
+
+all: helm kube ssh zsh
+
+helm:
+	@mkdir -p $(XDG_CONFIG_HOME)/helm
+	@stow -v -t $(XDG_CONFIG_HOME)/helm helm
+
+kube:
+	@stow -v kube
+
+
+ssh:
+	@mkdir -pv /tmp/ssh-sockets
+	@stow -v ssh
+
+zsh:
+	@stow -v -t $(XDG_CONFIG_HOME)/zsh/ zsh
+
+.PHONY: helm kube ssh zsh
