@@ -7,7 +7,7 @@ export DOTFILES=${HOME}/.dotfiles
 export EDITOR=nvim
 
 # antibody plugins
-if [[ ! -f ${ZDOTDIR}/plugins.zsh ]] || [[ ! -d $(antibody home) ]]; then
+if [[ ! -f ${ZDOTDIR}/plugins.zsh ]] || [[ ! -d ${XDG_CACHE_DIR}/antibody ]]; then
   antibody bundle <${ZDOTDIR}/plugins >${ZDOTDIR}/plugins.zsh
 fi
 source ${ZDOTDIR}/plugins.zsh
