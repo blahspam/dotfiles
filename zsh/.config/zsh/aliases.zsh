@@ -64,7 +64,7 @@ function kbfzf() {
 function kbip() {
   # local node_ip=$(kubectl cluster-info | grep master | egrep -o '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
   local node_ip=$(kubectl get pods -l name=tiller -o wide | awk 'NR>1 {print $7}')
-  local node_ports=$(kubectl get svc -o json SVC | jq -r '.spec.ports[] | "\(.name) \(.nodePort)"')
+  local node_ports=$(kubectl get svc -o json SERVICES | jq -r '.spec.ports[] | "\(.name) \(.nodePort)"')
   if [[ $(echo "${node_ports}" | wc -l) -eq 1 ]]; then
     echo "${node_ports}" |
       awk -v ip="${node_ip}" '{print "http://" ip ":"$2}' > >(cat) > >(tr -d '\n' | pbcopy)
