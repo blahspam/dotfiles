@@ -7,7 +7,7 @@ XDG_CACHE_HOME ?= $(HOME)/.cache
 XDG_DATA_HOME ?= $(HOME)/.local/share
 
 # simple stowable modules
-modules :=  git npm pg tig
+modules :=  git pg tig
 uname := $(shell uname)
 
 # run everything
@@ -36,6 +36,11 @@ pkgs:
 apt: pkgs
 endif
 
+npm:
+	@mkdir -pv "$(XDG_CACHE_HOME)/npm"
+	@mkdir -pv "$(XDG_DATA_HOME)/npm/"{bin,lib}
+	@stow --v --target=${HOME} $@
+
 # stow neovim & install plugins
 nvim: init-dirs
 	@mkdir -pv "$(XDG_CACHE_HOME)/nvim"
@@ -58,4 +63,4 @@ $(modules): init-dirs
 
 
 
-.PHONY: all pkgs nvim zsh $(modules)
+.PHONY: all pkgs npm nvim zsh $(modules)

@@ -31,6 +31,7 @@ export PSQL_HISTORY="${XDG_DATA_HOME}/pg/history"
 # zsh: xdg config
 export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
 
+# gopath
 export GOPATH="${HOME}/Develop/go"
 
 # path
@@ -41,10 +42,12 @@ for f in \
   /usr/local/opt/gnu-tar/libexec/gnubin \
   /usr/local/opt/make/libexec/gnubin \
   /usr/local/opt/go/libexec/bin \
-  /Library/TeX/Distributions/Programs/texbin; do
+  ${GOPATH}/bin \
+  ${XDG_DATA_HOME}/npm/bin \
+  /Library/TeX/Distributions/Programs/texbin
+do
   [[ -d ${f} ]] && path+=(${f})
 done
-path+=(${GOPATH}/bin)
 path+=(/usr/local/bin)
 path+=(/usr/local/sbin)
 path+=(/usr/bin)
