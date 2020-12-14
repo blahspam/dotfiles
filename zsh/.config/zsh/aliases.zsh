@@ -25,6 +25,8 @@ alias mkdir="mkdir -v"
 alias mv="mv -v"
 alias rm="rm -v"
 
+alias yarn="yarn --use-yarnrc ${XDG_CONFIG_HOME}/yarn/config"
+
 ###############################################################################
 # docker
 ###############################################################################
@@ -34,7 +36,9 @@ alias dkc="docker-compose"
 alias dki="dk images -f dangling=false"
 alias dkp="dk system prune -f"
 alias dkr="dk run IMAGES"
-alias dkrmi="dk rmi -f $(docker images -q -a -f dangling=true)"
+alias dks='dk stop $(docker ps -aq)'
+alias dkrmc='dk rm $(docker ps -aq)'
+alias dkrmi='dk rmi -f $(docker images -q)'
 
 alias -g IMAGES='$(dki | fzf --height=8 --header-lines=1 --reverse | awk "{print \$1 \":\" \$2}")'
 

@@ -28,6 +28,9 @@ export PGPASSFILE="${XDG_CONFIG_HOME}/pg/pgpass"
 # export PGSERVICEFILE="${XDG_CONFIG_HOME}/pg/pg_service.conf"
 export PSQL_HISTORY="${XDG_DATA_HOME}/pg/history"
 
+# yarn
+export YARN_CACHE_FOLDER=${XDG_CACHE_HOME}/yarn
+
 # zsh: xdg config
 export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
 
@@ -44,6 +47,7 @@ for f in \
   /usr/local/opt/go/libexec/bin \
   ${GOPATH}/bin \
   ${XDG_DATA_HOME}/npm/bin \
+  ${XDG_DATA_HOME}/yarn/bin \
   /Library/TeX/Distributions/Programs/texbin
 do
   [[ -d ${f} ]] && path+=(${f})

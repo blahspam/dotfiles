@@ -11,7 +11,7 @@ modules :=  git pg tig
 uname := $(shell uname)
 
 # run everything
-all: pkgs nvim zsh $(modules)
+all: pkgs npm nvim zsh $(modules)
 
 # initialize dirs if necessary
 init-dirs:
@@ -36,10 +36,11 @@ pkgs:
 apt: pkgs
 endif
 
+# stow yarn 
 npm:
 	@mkdir -pv "$(XDG_CACHE_HOME)/npm"
 	@mkdir -pv "$(XDG_DATA_HOME)/npm/"{bin,lib}
-	@stow --v --target=${HOME} $@
+	@stow --v --target=${HOME} npm
 
 # stow neovim & install plugins
 nvim: init-dirs
@@ -47,6 +48,12 @@ nvim: init-dirs
 	@mkdir -pv "$(XDG_DATA_HOME)/nvim/"{backup,swap,undo}
 	@stow -v --target=${HOME} nvim
 	@nvim +PlugInstall +qall!
+
+# stow yarn 
+yarn:
+	@mkdir -pv "$(XDG_CACHE_HOME)/yarn"
+	@mkdir -pv "$(XDG_DATA_HOME)/yarn/bin
+	@stow --v --target=${HOME} yarn
 
 # stow zsh
 zsh: init-dirs

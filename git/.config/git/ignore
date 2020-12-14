@@ -8,6 +8,5 @@
 *.swp
 
 jbaile223.yaml
-*-jbaile223.yaml
 jbaile223-*.yaml
 local-*.yaml
