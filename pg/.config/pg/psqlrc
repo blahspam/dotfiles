@@ -4,4 +4,3 @@
 \set QUIET 1
 
 \pset null '(null)'
-\pset pager 'less -SX'

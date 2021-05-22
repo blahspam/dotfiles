@@ -33,6 +33,7 @@ alias yarn="yarn --use-yarnrc ${XDG_CONFIG_HOME}/yarn/config"
 
 alias dk="docker"
 alias dkc="docker-compose"
+alias dke="dk exec -it CONTAINERS bash"
 alias dki="dk images -f dangling=false"
 alias dkp="dk system prune -f"
 alias dkr="dk run IMAGES"
@@ -40,6 +41,7 @@ alias dks='dk stop $(docker ps -aq)'
 alias dkrmc='dk rm $(docker ps -aq)'
 alias dkrmi='dk rmi -f $(docker images -q)'
 
+alias -g CONTAINERS='$(dk ps --format="{{.ID}} - {{.Image}} ({{.Names}})" | fzf --height=8 --header-lines=0 --reverse | awk "{print \$1}")'
 alias -g IMAGES='$(dki | fzf --height=8 --header-lines=1 --reverse | awk "{print \$1 \":\" \$2}")'
 
 ###############################################################################

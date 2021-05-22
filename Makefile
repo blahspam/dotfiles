@@ -52,7 +52,7 @@ nvim: init-dirs
 # stow yarn 
 yarn:
 	@mkdir -pv "$(XDG_CACHE_HOME)/yarn"
-	@mkdir -pv "$(XDG_DATA_HOME)/yarn/bin
+	@mkdir -pv "$(XDG_DATA_HOME)/yarn/bin"
 	@stow --v --target=${HOME} yarn
 
 # stow zsh
@@ -68,6 +68,4 @@ $(modules): init-dirs
 	@mkdir -pv "$(XDG_CACHE_HOME)/$@"
 	@stow --v --target=${HOME} $@
 
-
-
-.PHONY: all pkgs npm nvim zsh $(modules)
+.PHONY: all pkgs npm nvim yarn zsh $(modules)
