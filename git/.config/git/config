@@ -37,3 +37,8 @@ pruneTags = true
 [user]
 name = Jeff Bailey
 email = jeff@blahspam.com
+
+[url "ssh://git@github.comcast.com/"]
+    insteadOf = https://github.comcast.com/
+[init]
+	defaultBranch = main

@@ -17,14 +17,14 @@ cask 'basictex'
 cask 'carbon-copy-cloner'
 cask 'docker'
 cask 'dropbox'
-# cask 'firefox'
+cask 'firefox'
 cask 'font-cascadia-code'
 cask 'font-cascadia-code-pl'
 cask 'font-fontawesome'
 cask 'font-jetbrains-mono'
 cask 'font-source-code-pro'
 cask 'font-source-code-pro-for-powerline'
-# cask 'google-chrome'
+cask 'google-chrome'
 cask 'istat-menus'
 cask 'iterm2'
 cask 'jetbrains-toolbox'
@@ -48,7 +48,7 @@ brew 'awscli'
 brew 'bash'
 brew 'coreutils'
 brew 'curl'
-brew 'displayplacer'
+# brew 'displayplacer'
 brew 'dnsmasq'
 brew 'fzf'
 brew 'gawk'
@@ -92,8 +92,8 @@ brew 'yq'
 brew 'zsh'
 
 mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'Pages', id: 409201541
+# mas 'Numbers', id: 409203825
+# mas 'Pages', id: 409201541
 mas 'Pixelmator Pro', id: 1289583905
 mas 'Things', id: 904280696
 mas 'Xcode', id: 497799835
